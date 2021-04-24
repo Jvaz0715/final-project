@@ -29,7 +29,7 @@
 //     })
 
 
-console.log(greet)
+console.log(numbers)
 
 const greeting = $('<h1></h1>').text(greet);
 
