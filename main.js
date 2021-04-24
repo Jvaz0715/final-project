@@ -1,9 +1,9 @@
 //delclare the input value
-const apiKey = $('.apikey-input').val();
 //declare the button that will be used to execute
-const enterAPI = $('.search-button');
+const enterAPI = $(".search-button");
 
 enterAPI.click(function() {
+    const apiKey = $(".apikey-input").val();
     //test what details come with the data
     //using USA as example, fetch the url
     fetch(`https://api.opentripmap.com/0.1/en/places/geoname?name=san%20diego&apikey=${apiKey}`)
@@ -30,8 +30,10 @@ enterAPI.click(function() {
                 for (let i = 0; i < data.features.length; i++) {
                     console.log(data.features[i].properties.name)
                 }
-        })
-})
 
+            })
+        })
+        $(".apikey-input").val("");
+        $(".apikey-input").attr("placeholder", "enter api key");
 })
 
