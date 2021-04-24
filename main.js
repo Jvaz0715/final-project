@@ -1,3 +1,4 @@
+import numbers from 'numbers';
 // test what details come with the data
 
 // using USA as example, fetch the url
