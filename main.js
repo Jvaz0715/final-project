@@ -19,7 +19,7 @@ enterAPI.click(function() {
         return coordinates;
         })
         .then((coordinates) => {
-            fetch(`https://api.opentripmap.com/0.1/en/places/radius?radius=8050&lon=${coordinates[0]}&lat=${coordinates[1]}&kinds=museums&rate=3&limit=10&apikey=${apiKey}`)
+            fetch(`https://api.opentripmap.com/0.1/en/places/radius?radius=8050&lon=${coordinates[0]}&lat=${coordinates[1]}&kinds=museums&rate=3&limit=5&apikey=${apiKey}`)
                 .then((res) => res.json())
                 .then((data) => {
                 console.log(data.features.length);
