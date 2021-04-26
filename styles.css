@@ -12,11 +12,9 @@ body {
 /* The banner image */
 .banner-image {
     background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(61, 61, 61, 0.5)), url("assets/banner-img.jpg");
-  
-    /* Set a specific height */
+    /* Set a specific height, change accordingly */
     height: 50%;
-  
-    /* Position and center the image to scale nicely on all screens */
+    /* Position and center the image to scale nicely on all screens, will come in handy for media query */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
