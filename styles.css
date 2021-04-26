@@ -1,0 +1,40 @@
+/* Designing with mobile in mind first */
+
+body, html {
+    height: 100%;
+}
+
+body {
+    width: 640px;
+    border: 3px solid black;
+}
+
+/* The banner image */
+.banner-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(61, 61, 61, 0.5)), url("assets/banner-img.jpg");
+  
+    /* Set a specific height */
+    height: 50%;
+  
+    /* Position and center the image to scale nicely on all screens */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+  
+  /* Place text in the middle of the image */
+  .banner-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-shadow: 2px 2px gray;
+    font-size: x-large;
+  }
+
+  .banner-tagline {
+      font-style: italic;
+  }
