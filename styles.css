@@ -10,7 +10,7 @@ body {
 
 /* The banner image */
 .banner-image {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(61, 61, 61, 0.5)), url("assets/banner-img.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(61, 61, 61, 0.5)), url("assets/banner-img.jpg");
     /* Set a specific height, change accordingly */
     height: 40%;
     /* Position and center the image to scale nicely on all screens, will come in handy for media query */
@@ -18,6 +18,14 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+  }
+
+  #top-five-logo {
+      width: 150px;
+      height: 150px;
+      background-color: #4682B4;
+      border-radius: 50%;
+      filter: drop-shadow(5px 5px 5px gray);
   }
   
   /* Place text in the middle of the image */
