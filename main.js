@@ -24,7 +24,7 @@ enterAPI.click(function() {
                 .then((res) => res.json())
                 .then((data) => {
                 // loops through the data to get wikidata id needed to get more information
-                for (let i = 0; i < 5; i++) {
+                for (let i = 0; i < 1; i++) {
                     const xID = data.features[i].properties.xid;
                     console.log(data.features[i].properties.xid)
                     //uses xid to create new url to fetch new data from open map api

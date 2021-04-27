@@ -108,11 +108,19 @@ input {
 }
 
 .search-again-container {
-    width: 80%;
+    width: 90%;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card {
+    margin: 10px;
 }
 
 .search-again-button {
-    width: 100%;
+    width: 90%;
 }
 
 .search-button:hover,
