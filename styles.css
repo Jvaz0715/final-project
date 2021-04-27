@@ -70,11 +70,14 @@ body {
 
 input {
     width: 90%;
+    height: 20px;
+    border-radius: 5px;
 }
 
 .searching-title {
     margin-top: 10px;
     margin-bottom: 10px;
+    
 }
 
 .city-input,
