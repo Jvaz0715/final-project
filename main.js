@@ -39,5 +39,6 @@ enterAPI.click(function() {
         })
         $(".apikey-input").val("");
         $(".apikey-input").attr("placeholder", "enter api key");
+        $('.main-section').addClass('hidden');
 })
 
