@@ -116,3 +116,30 @@ label {
     color: white;
     text-shadow: 2px 1px gray;
 }
+
+.footer-section {
+    position: fixed;
+    padding: 10px 10px 0px 10px;
+    bottom: 0;
+    width: 330px;
+    /* Height of the footer*/ 
+    height: 50px;
+    background: #37474f;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    font-size: 10px;
+}
+
+a:hover {
+    color: #FF8000;
+}
