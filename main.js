@@ -24,27 +24,22 @@ enterAPI.click(function() {
                 .then((res) => res.json())
                 .then((data) => {
                 // loops through the data to get wikidata id needed to get more information
-                for (let i = 0; i < 5; i++) {
-                    const wikiID = data.features[i].properties.wikidata;
-                    //below will get the wikidata api data
-                    fetch(`https://www.wikidata.org/wiki/Special:EntityData/${wikiID}.json`)
+                for (let i = 0; i < 1; i++) {
+                    const xID = data.features[i].properties.xid;
+                    console.log(data.features[i].properties.xid)
+                    //uses xid to create new url to fetch new data from open map api
+                    fetch(`https://api.opentripmap.com/0.1/en/places/xid/${xID}?apikey=${apiKey}`)
                         .then((res) => res.json())
                         .then((data) => {
-                            // uses data from wikidata api to console log necessary information
-
-                            //gets the name of the place
-                            console.log("Attractions name: ")
-                            console.log(data.entities[Object.keys(data.entities)[0]].labels.en.value)
-
-                            // gets the wikidata description of the place
-                            console.log("description: ")
-                            console.log(data.entities[Object.keys(data.entities)[0]].descriptions.en.value)
-                    
-                            //gets the wikipedia url
-                            console.log("Wikipedia Page: ")
-                            console.log(data.entities[Object.keys(data.entities)[0]].sitelinks.enwiki.url)
-                                
-                            
+                            console.log(data)
+                            //will get you the name of the attraction
+                            console.log("Attraction Name: " + data.name)
+                            //this will give you an image url for the place
+                            console.log("image url: " + data.image);
+                            //this will give you a description of the place
+                            console.log("Wiki description: " + data.wikipedia_extracts.text); 
+                            //this will get you the wikipedia page to the place
+                            console.log("wikipedia page: " + data.wikipedia);
                             
                         })
                 }
@@ -56,3 +51,4 @@ enterAPI.click(function() {
         // $('.main-section').addClass('hidden');
 })
 
+// https://api.opentripmap.com/0.1/en/places/radius?radius=${radiusInput}&lon=${coordinates[0]}&lat=${coordinates[1]}&kinds=${attractionInput}&rate=3&limit=5&apikey=${apiKey}`
