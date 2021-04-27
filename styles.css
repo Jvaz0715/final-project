@@ -6,7 +6,7 @@ body, html {
 body {
     width: 350px;
     border: 3px solid black;
-
+    font-family: 'Poppins', sans-serif;
 }
 
 /* The banner image */
@@ -77,7 +77,9 @@ input {
 .searching-title {
     margin-top: 10px;
     margin-bottom: 10px;
-    
+    text-shadow: 2px 2px gray;
+    font-size: 20px;
+    color: #FF8000;
 }
 
 .city-input,
@@ -106,4 +108,11 @@ input {
     width: 125px;
     height: 25px;
     background-color: #c83200;
+}
+
+label {
+    font-size: 10px;
+    font-style: italic;
+    color: white;
+    text-shadow: 2px 1px gray;
 }
