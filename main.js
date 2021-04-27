@@ -48,7 +48,12 @@ enterAPI.click(function() {
         })
         // $(".apikey-input").val("");
         // $(".apikey-input").attr("placeholder", "enter api key");
-        // $('.main-section').addClass('hidden');
+        $('.input-container').addClass('hidden');
+        $('.search-again-container').removeClass('hidden');
 })
 
-// https://api.opentripmap.com/0.1/en/places/radius?radius=${radiusInput}&lon=${coordinates[0]}&lat=${coordinates[1]}&kinds=${attractionInput}&rate=3&limit=5&apikey=${apiKey}`
+const searchAgain = $('.search-again-container');
+searchAgain.click(function() {
+    $('.input-container').removeClass('hidden');
+    $('.search-again-container').addClass('hidden');
+})

@@ -157,5 +157,6 @@ label {
 
 .hidden {
     visibility: hidden;
+    display:none;
 }
 
