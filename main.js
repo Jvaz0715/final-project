@@ -10,7 +10,7 @@ enterAPI.click(function() {
     fetch(`https://api.opentripmap.com/0.1/en/places/geoname?name=${cityInput}&apikey=${apiKey}`)
         .then((res) => res.json())
         .then((data) => {
-        // console.log(data)
+        console.log(data)
         // console.log("This is the latitude: " + data.lat);
         // console.log("This is the latitude: " + data.lon);
 
@@ -31,14 +31,27 @@ enterAPI.click(function() {
                 // this will target the name of the museums
                 // console.log(data.features[0].properties.name)
 
-                for (let i = 0; i < data.features.length; i++) {
+                for (let i = 0; i < 1; i++) {
                     console.log(data.features[i].properties.name)
+                    console.log(data.features[i].properties.kinds)
+                    //below will give you the wikidata id needed for another fetch that will get you the descriptions of the place
+                    // console.log(data.features[i].properties.wikidata)
+                    const wikiID = data.features[i].properties.wikidata;
+                    //below will get the wikidata api stuff
+                    fetch(`https://www.wikidata.org/wiki/Special:EntityData/${wikiID}.json`)
+                        .then((res) => res.json())
+                        .then((data) => {
+                            // uses fetch to get the zoos description from wikidata!
+                            console.log(data.entities[Object.keys(data.entities)[0]].descriptions.en.value)
+                            //trying to get the wikipedia page
+                            console.log(data.entities[Object.keys(data.entities)[0]].sitelinks.enwiki.url)
+                        })
                 }
 
             })
         })
-        $(".apikey-input").val("");
-        $(".apikey-input").attr("placeholder", "enter api key");
-        $('.main-section').addClass('hidden');
+        // $(".apikey-input").val("");
+        // $(".apikey-input").attr("placeholder", "enter api key");
+        // $('.main-section').addClass('hidden');
 })
 
