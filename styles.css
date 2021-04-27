@@ -1,16 +1,10 @@
 /* Designing with mobile in mind first */
-html{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
 body, html {
     height: 100%;
 }
 
 body {
-    width: 95%;
+    width: 350px;
     border: 3px solid black;
 }
 
