@@ -19,13 +19,15 @@ enterAPI.click(function() {
         return coordinates;
         })
         .then((coordinates) => {
-            fetch(`https://api.opentripmap.com/0.1/en/places/radius?radius=8050&lon=${coordinates[0]}&lat=${coordinates[1]}&kinds=museums&rate=3&limit=5&apikey=${apiKey}`)
+            const radiusInput = $('.radius-input').val();
+            const attractionInput = $('.attraction-input').val().toLowerCase();
+            fetch(`https://api.opentripmap.com/0.1/en/places/radius?radius=${radiusInput}&lon=${coordinates[0]}&lat=${coordinates[1]}&kinds=${attractionInput}&rate=3&limit=5&apikey=${apiKey}`)
                 .then((res) => res.json())
                 .then((data) => {
                 console.log(data.features.length);
                 console.log(data.features[0])
                 // this will target the name of the museums
-                console.log(data.features[0].properties.name)
+                // console.log(data.features[0].properties.name)
 
                 for (let i = 0; i < data.features.length; i++) {
                     console.log(data.features[i].properties.name)
