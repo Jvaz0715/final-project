@@ -45,15 +45,23 @@ body {
 }
 
 .input-container {
+    width: 90%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-top: 25px;
+    border: 1px solid gray;
+    box-shadow: 2px 2px 2px 1px #888888;
 }
 
 input {
     width: 90%;
+}
+
+.searching-title {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .city-input,
@@ -64,6 +72,9 @@ input {
 }
 
 .search-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 120px;
     height: 20px;
     border-radius: 25px;
@@ -71,6 +82,12 @@ input {
     border: 1px solid white;
     padding: 2px;
     box-shadow: 2px 2px 2px 1px #888888;
-    text-align: center;
     color: white;
+    margin-top: 5px;
+}
+
+.search-button:hover {
+    width: 125px;
+    height: 25px;
+    background-color: #c83200;
 }
