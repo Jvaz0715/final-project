@@ -5,8 +5,9 @@ const enterAPI = $(".search-button");
 enterAPI.click(function() {
     const apiKey = $(".apikey-input").val();
     //test what details come with the data
+    const cityInput = encodeURIComponent($('.city-input').val().toLowerCase());
     //using USA as example, fetch the url
-    fetch(`https://api.opentripmap.com/0.1/en/places/geoname?name=san%20diego&apikey=${apiKey}`)
+    fetch(`https://api.opentripmap.com/0.1/en/places/geoname?name=${cityInput}&apikey=${apiKey}`)
         .then((res) => res.json())
         .then((data) => {
         // console.log(data)
@@ -21,6 +22,7 @@ enterAPI.click(function() {
         .then((coordinates) => {
             const radiusInput = $('.radius-input').val();
             const attractionInput = $('.attraction-input').val().toLowerCase();
+
             fetch(`https://api.opentripmap.com/0.1/en/places/radius?radius=${radiusInput}&lon=${coordinates[0]}&lat=${coordinates[1]}&kinds=${attractionInput}&rate=3&limit=5&apikey=${apiKey}`)
                 .then((res) => res.json())
                 .then((data) => {
