@@ -5,7 +5,7 @@ html {
 
 body {
     height: 100%;
-    width: 350px;
+    width: 375px;
     /* border: 3px solid black; */
     font-family: 'Poppins', sans-serif;
 }
@@ -51,13 +51,14 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: auto;
+    height: 58%;
     /* border: 3px solid yellow; */
     overflow-y: scroll;
 }
 
 .input-container {
     width: 80%;
+    height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -90,12 +91,13 @@ input {
     text-align: center;
 }
 
-.search-button {
+.search-button,
+.search-again-button {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 120px;
-    height: 20px;
+    height: 25px;
     border-radius: 25px;
     background-color: #FF8000;
     border: 1px solid white;
@@ -105,7 +107,16 @@ input {
     margin-top: 5px;
 }
 
-.search-button:hover {
+.search-again-container {
+    width: 80%;
+}
+
+.search-again-button {
+    width: 100%;
+}
+
+.search-button:hover,
+.search-again-button:hover {
     width: 125px;
     height: 25px;
     background-color: #c83200;
@@ -120,11 +131,10 @@ label {
 
 .footer-section {
     position: fixed;
-    padding: 10px 10px 0px 10px;
     bottom: 0;
-    width: 345px;
+    width: 375px;
     /* Height of the footer*/ 
-    height: 50px;
+    height: 12%;
     background: #37474f;
 }
 
@@ -135,13 +145,13 @@ label {
     align-items: center;
 }
 
-a {
+.nav-link {
     color: white;
     text-decoration: none;
     font-size: 10px;
 }
 
-a:hover {
+.nav-link:hover {
     color: #FF8000;
 }
 
