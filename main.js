@@ -18,13 +18,13 @@ enterAPI.click(function() {
         })
         .then((coordinates) => {
             const radiusInput = $('.radius-input').val();
-            const attractionInput = $('.attraction-input').val().toLowerCase();
+            const attractionInput = $('.attraction-input').val().toLowerCase().replace(" ", "_");
             //uses data from open trip map to gather get things within city centers radius
             fetch(`https://api.opentripmap.com/0.1/en/places/radius?radius=${radiusInput}&lon=${coordinates[0]}&lat=${coordinates[1]}&kinds=${attractionInput}&rate=3&limit=5&apikey=${apiKey}`)
                 .then((res) => res.json())
                 .then((data) => {
                 // loops through the data to get wikidata id needed to get more information
-                for (let i = 0; i < 1; i++) {
+                for (let i = 0; i < 5; i++) {
                     const xID = data.features[i].properties.xid;
                     console.log(data.features[i].properties.xid)
                     //uses xid to create new url to fetch new data from open map api
