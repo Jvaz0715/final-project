@@ -31,15 +31,7 @@ enterAPI.click(function() {
                     fetch(`https://api.opentripmap.com/0.1/en/places/xid/${xID}?apikey=${apiKey}`)
                         .then((res) => res.json())
                         .then((data) => {
-                            console.log(data)
-                            //will get you the name of the attraction
-                            console.log("Attraction Name: " + data.name)
-                            //this will give you an image url for the place
-                            console.log("image url: " + data.image);
-                            //this will give you a description of the place
-                            console.log("Wiki description: " + data.wikipedia_extracts.text); 
-                            //this will get you the wikipedia page to the place
-                            console.log("wikipedia page: " + data.wikipedia);
+                            createCard(data) 
                             
                         })
                 }
@@ -57,3 +49,17 @@ searchAgain.click(function() {
     $('.input-container').removeClass('hidden');
     $('.search-again-container').addClass('hidden');
 })
+
+//function that will create card
+
+function createCard(data) {
+    console.log(data)
+    //will get you the name of the attraction
+    console.log("Attraction Name: " + data.name)
+    //this will give you an image url for the place
+    console.log("image url: " + data.image);
+    //this will give you a description of the place
+    console.log("Wiki description: " + data.wikipedia_extracts.text); 
+    //this will get you the wikipedia page to the place
+    console.log("wikipedia page: " + data.wikipedia);
+}
