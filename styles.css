@@ -1,11 +1,12 @@
 /* Designing with mobile in mind first */
-body, html {
+html {
     height: 100%;
 }
 
 body {
+    height: 100%;
     width: 350px;
-    border: 3px solid black;
+    /* border: 3px solid black; */
     font-family: 'Poppins', sans-serif;
 }
 
@@ -13,7 +14,7 @@ body {
 .banner-image {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(61, 61, 61, 0.5)), url("assets/banner-img.jpg");
     /* Set a specific height, change accordingly */
-    height: 40%;
+    height: 30%;
     /* Position and center the image to scale nicely on all screens, will come in handy for media query */
     background-position: center;
     background-repeat: no-repeat;
@@ -50,9 +51,9 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 40%;
+    height: auto;
     /* border: 3px solid yellow; */
-    
+    overflow-y: scroll;
 }
 
 .input-container {
@@ -121,7 +122,7 @@ label {
     position: fixed;
     padding: 10px 10px 0px 10px;
     bottom: 0;
-    width: 330px;
+    width: 345px;
     /* Height of the footer*/ 
     height: 50px;
     background: #37474f;
