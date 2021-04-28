@@ -24,7 +24,7 @@ enterAPI.click(function() {
                 .then((res) => res.json())
                 .then((data) => {
                 // loops through the data to get wikidata id needed to get more information
-                for (let i = 0; i < 1; i++) {
+                for (let i = 0; i < 5; i++) {
                     const xID = data.features[i].properties.xid;
                     console.log(data.features[i].properties.xid)
                     //uses xid to create new url to fetch new data from open map api
@@ -62,4 +62,15 @@ function createCard(data) {
     console.log("Wiki description: " + data.wikipedia_extracts.text); 
     //this will get you the wikipedia page to the place
     console.log("wikipedia page: " + data.wikipedia);
+    const resultsDisplay = $('.search-again-container');
+    const newAttraction = $(`
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">${data.name}</h5>
+            <p class="card-text">${data.wikipedia_extracts.text}</p>
+            <a href="${data.wikipedia}" target="_blank" class="btn btn-primary">Learn More</a>
+        </div>
+    </div>`)
+    resultsDisplay.append(newAttraction)
+    
 }
