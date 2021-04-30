@@ -79,6 +79,7 @@ function createCard(data) {
     <div class="card" style="width: 18rem;">
         <div class="card-body">
             <h5 class="card-title">${data.name}</h5>
+            <div class="favorite-icon"><img src="assets/favorite.png" class="fave-me"></div>
             <p class="card-text">${data.wikipedia_extracts.text}</p>
             <a href="${data.wikipedia}" target="_blank" class="btn btn-primary">Learn More</a>
         </div>

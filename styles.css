@@ -168,3 +168,19 @@ label {
     display:none;
 }
 
+.fave-me {
+    width: 30px;
+    height: 30px;
+}
+
+.fave-me:hover {
+    width: 35px;
+    height: 35px;
+    background-color: #e6b254;
+}
+
+.fave-me:active {
+    width: 30px;
+    height: 30px;
+    background-color: #e6b254;
+}
