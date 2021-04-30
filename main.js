@@ -47,7 +47,19 @@ enterAPI.click(function() {
 const searchAgain = $('.search-again-container');
 searchAgain.click(function() {
     $('.input-container').removeClass('hidden');
+    $('.search-again-container').empty();
+    const newSearchAgain = $('<div class="search-again-button">Search Again</div>');
+    $('.search-again-container').append(newSearchAgain);
     $('.search-again-container').addClass('hidden');
+    
+    $(".apikey-input").val("");
+    $(".apikey-input").attr("placeholder", "enter api key");
+    $(".city-input").val("");
+    $(".city-input").attr("placeholder", "City Name");
+    $(".attraction-input").val("");
+    $(".attraction-input").attr("placeholder", "Attraction");
+    $(".radius-input").val("");
+    $(".radius-input").attr("placeholder", "Distance");
 })
 
 //function that will create card
@@ -71,6 +83,6 @@ function createCard(data) {
             <a href="${data.wikipedia}" target="_blank" class="btn btn-primary">Learn More</a>
         </div>
     </div>`)
-    resultsDisplay.append(newAttraction)
+    resultsDisplay.append(newAttraction);
     
 }
