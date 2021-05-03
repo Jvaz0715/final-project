@@ -6,7 +6,7 @@ html {
 body {
     height: 100%;
     width: 375px;
-    /* border: 3px solid black; */
+    border: 3px solid black;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -59,7 +59,7 @@ body {
 }
 
 .input-container {
-    width: 90%;
+    width: 80%;
     height: 375px;
     display: flex;
     flex-direction: column;
@@ -150,9 +150,9 @@ label {
     height: 12%;
     background: #37474f;
     /* border: 3px solid yellow; */
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
 }
 
 .nav {
