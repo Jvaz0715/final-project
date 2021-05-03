@@ -232,6 +232,8 @@ label {
     .results-display {
         width: 100%;
         display: flex;
+        justify-content: center;
+        align-items: center;
         flex: row;
         overflow-x: scroll;
     }
@@ -259,6 +261,8 @@ label {
     .nav-link {
         font-size: 14px;
     }
+
+   
 
   }
 
