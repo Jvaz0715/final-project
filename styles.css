@@ -44,6 +44,8 @@ body {
 
 .banner-tagline {
     font-style: italic;
+    font-size: 16px;
+    margin-top: 10px;
 }
 
 .main-section {
@@ -57,23 +59,25 @@ body {
 }
 
 .input-container {
-    width: 80%;
-    height: 300px;
+    width: 90%;
+    height: 375px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     border: 2px solid gray;
     box-shadow: 2px 2px 2px 1px #888888;
     padding: 10px;
     background-color: #4682B4;
     border-radius: 20px;
+    border: 3px solid yellow;
 }
 
 input {
     width: 90%;
     height: 24px;
     border-radius: 5px;
+    padding: 3px;
 }
 
 .searching-title {
@@ -131,10 +135,11 @@ input {
 }
 
 label {
-    font-size: 10px;
+    font-size: 14px;
     font-style: italic;
     color: white;
     text-shadow: 2px 1px gray;
+    margin-top: -5px;
 }
 
 .footer-section {
@@ -144,6 +149,10 @@ label {
     /* Height of the footer*/ 
     height: 12%;
     background: #37474f;
+    /* border: 3px solid yellow; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .nav {
