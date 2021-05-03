@@ -121,10 +121,15 @@ input {
     
 .card {
     margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
     
 .search-again-button {
     width: 90%;
+    margin-bottom: 10px;
 }
     
 .search-button:hover,
@@ -190,9 +195,7 @@ label {
     background-color: #e6b254;
 }
 
-.card-image {
-    height: 30%;
-}
+
 
 /* For desktop: */
 @media only screen and (min-width: 768px) {
@@ -222,6 +225,10 @@ label {
         overflow-y: scroll;
     }
 
+    .search-again-button {
+        width: 60%;
+    }
+
     .results-display {
         width: 100%;
         display: flex;
@@ -231,7 +238,11 @@ label {
         
     .card {
         margin: 10px;
-        height: 100%;
+        height: 600px;
+    }
+
+    .card-image {
+        height: 25%;
     }
 
     .footer-section {

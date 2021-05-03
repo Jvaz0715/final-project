@@ -1,8 +1,9 @@
 //delclare the input value
 //declare the button that will be used to execute
-const enterAPI = $(".search-button");
+const searchButton = $(".search-button");
 
-enterAPI.click(function() {
+
+searchButton.click(function() {
     const apiKey = $(".apikey-input").val();
     //test what details come with the data
     const cityInput = encodeURIComponent($('.city-input').val().toLowerCase());
@@ -35,7 +36,6 @@ enterAPI.click(function() {
                             createCard(data)
                         })
                 }
-
             })
         })
         // $(".apikey-input").val("");
@@ -44,50 +44,37 @@ enterAPI.click(function() {
         $('.search-again-container').removeClass('hidden');
 })
 
-const searchAgain = $('.search-again-container');
-searchAgain.click(function() {
-    $('.input-container').removeClass('hidden');
-    $('.search-again-container').empty();
-    const newSearchAgain = $('<div class="search-again-button">Search Again</div>');
-    const resultsDisplay = $('<div class="results-display"></div>');
-    $('.search-again-container').append(newSearchAgain);
-    $('.search-again-container').addClass('hidden');
-    $('.search-again-container').append(resultsDisplay);
-    
-    $(".apikey-input").val("");
-    $(".apikey-input").attr("placeholder", "enter api key");
-    $(".city-input").val("");
-    $(".city-input").attr("placeholder", "City Name");
-    $(".attraction-input").val("");
-    $(".attraction-input").attr("placeholder", "Attraction");
-    $(".radius-input").val("");
-    $(".radius-input").attr("placeholder", "Distance");
-})
 
-//function that will create card
 
+//function that will create card using the last fetch's data
 function createCard(data) {
     console.log(data)
     //will get you the name of the attraction
     console.log("Attraction Name: " + data.name)
+
     //this will give you an image url for the place
     console.log("image url: " + data.image);
+    
     //this will give you a description of the place
+    //must shorten it as text lengths vary
     console.log("Wiki description: " + data.wikipedia_extracts.text); 
+    
     //this will get you the wikipedia page to the place
     console.log("wikipedia page: " + data.wikipedia);
     const resultsDisplay = $('.results-display');
 
     let attractionDescription = data.wikipedia_extracts.text;
 
+    //if...else statement that shortens the text to 280 characters or less
     if(attractionDescription.length > 280){
        attractionDescription = attractionDescription.substring(0,280) + "..."; 
     } else {
         attractionDescription;
     }
     
+    //uses jquery to create a new attraction card to display;
     const newAttraction = $(`
-    <div class="card" style="width: 18rem;">
+    <div class="card card-extras" style="width: 18rem;">
     <img class="card-img-top card-image" src="${data.preview.source}" alt="Card image cap">
         <div class="card-body">
             <h5 class="card-title">${data.name}</h5>
@@ -97,5 +84,31 @@ function createCard(data) {
         </div>
     </div>`)
     resultsDisplay.append(newAttraction);
-    
 }
+
+//search again button that will reset everything and produce new results each time
+const searchAgain = $('.search-again-container');
+searchAgain.click(function() {
+    //brings back the original search container
+    $('.input-container').removeClass('hidden');
+    
+    //empties the result container
+    $('.search-again-container').empty();
+    
+    //Recreates and appends the search again button and the results display that were "emptied" above
+    const newSearchAgain = $('<div class="search-again-button">Search Again</div>');
+    const resultsDisplay = $('<div class="results-display"></div>');
+    $('.search-again-container').append(newSearchAgain);
+    $('.search-again-container').addClass('hidden');
+    $('.search-again-container').append(resultsDisplay);
+
+    //Resets all the inputs from previous search
+    $(".apikey-input").val("");
+    $(".apikey-input").attr("placeholder", "enter api key");
+    $(".city-input").val("");
+    $(".city-input").attr("placeholder", "City Name");
+    $(".attraction-input").val("");
+    $(".attraction-input").attr("placeholder", "Attraction");
+    $(".radius-input").val("");
+    $(".radius-input").attr("placeholder", "Distance");
+})
