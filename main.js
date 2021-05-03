@@ -49,8 +49,10 @@ searchAgain.click(function() {
     $('.input-container').removeClass('hidden');
     $('.search-again-container').empty();
     const newSearchAgain = $('<div class="search-again-button">Search Again</div>');
+    const resultsDisplay = $('<div class="results-display"></div>');
     $('.search-again-container').append(newSearchAgain);
     $('.search-again-container').addClass('hidden');
+    $('.search-again-container').append(resultsDisplay);
     
     $(".apikey-input").val("");
     $(".apikey-input").attr("placeholder", "enter api key");
