@@ -197,11 +197,15 @@ label {
     }
     
     .input-container {
-        width: 60%;
+        width: 450px;
         height: 80%;
     }
 
     .main-section {
+        height: 70%;
+    }
+
+    .input-container {
         height: 70%;
     }
 
