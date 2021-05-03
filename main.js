@@ -74,7 +74,7 @@ function createCard(data) {
     console.log("Wiki description: " + data.wikipedia_extracts.text); 
     //this will get you the wikipedia page to the place
     console.log("wikipedia page: " + data.wikipedia);
-    const resultsDisplay = $('.search-again-container');
+    const resultsDisplay = $('.results-display');
     const newAttraction = $(`
     <div class="card" style="width: 18rem;">
         <div class="card-body">
