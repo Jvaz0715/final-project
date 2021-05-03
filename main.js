@@ -7,6 +7,7 @@ enterAPI.click(function() {
     //test what details come with the data
     const cityInput = encodeURIComponent($('.city-input').val().toLowerCase());
     //uses inputs to finish fetch opentripmap url
+    // First fetch is to get the city’s center point coordinates:
     fetch(`https://api.opentripmap.com/0.1/en/places/geoname?name=${cityInput}&apikey=${apiKey}`)
         .then((res) => res.json())
         .then((data) => {
@@ -31,8 +32,7 @@ enterAPI.click(function() {
                     fetch(`https://api.opentripmap.com/0.1/en/places/xid/${xID}?apikey=${apiKey}`)
                         .then((res) => res.json())
                         .then((data) => {
-                            createCard(data) 
-                            
+                            createCard(data)
                         })
                 }
 
@@ -79,6 +79,7 @@ function createCard(data) {
     const resultsDisplay = $('.results-display');
     const newAttraction = $(`
     <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="${data.preview.source}" alt="Card image cap">
         <div class="card-body">
             <h5 class="card-title">${data.name}</h5>
             <div class="favorite-icon"><img src="assets/favorite.png" class="fave-me"></div>
