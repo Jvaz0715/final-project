@@ -5,11 +5,11 @@ html {
 
 body {
     height: 100%;
-    width: 375px;
-    border: 3px solid black;
+    width: 100%;
+    /* border: 3px solid black; */
     font-family: 'Poppins', sans-serif;
 }
-
+    
 /* The banner image */
 .banner-image {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(61, 61, 61, 0.5)), url("assets/banner-img.jpg");
@@ -21,7 +21,7 @@ body {
     background-size: cover;
     position: relative;
 }
-
+    
 #top-five-logo {
     width: 150px;
     height: 150px;
@@ -29,7 +29,7 @@ body {
     border-radius: 50%;
     filter: drop-shadow(5px 5px 5px gray);
 }
-  
+      
 /* Place text in the middle of the image */
 .banner-text {
     text-align: center;
@@ -41,13 +41,13 @@ body {
     text-shadow: 2px 2px gray;
     font-size: x-large;
 }
-
+    
 .banner-tagline {
     font-style: italic;
     font-size: 16px;
     margin-top: 10px;
 }
-
+    
 .main-section {
     display: flex;
     flex-direction: column;
@@ -57,10 +57,10 @@ body {
     /* border: 3px solid yellow; */
     overflow-y: scroll;
 }
-
+    
 .input-container {
     width: 80%;
-    height: 375px;
+    height: 80%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -69,17 +69,16 @@ body {
     box-shadow: 2px 2px 2px 1px #888888;
     padding: 10px;
     background-color: #4682B4;
-    border-radius: 20px;
-    border: 3px solid yellow;
+    border-radius: 20px;        
 }
-
+    
 input {
     width: 90%;
     height: 24px;
     border-radius: 5px;
-    padding: 3px;
+    padding: 5px;
 }
-
+    
 .searching-title {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -87,14 +86,14 @@ input {
     font-size: 20px;
     color: #FF8000;
 }
-
+    
 .city-input,
 .attraction-input,
 .radius-input {
-    width: 50%;
+    width: 60%;
     text-align: center;
 }
-
+    
 .search-button,
 .search-again-button {
     display: flex;
@@ -110,7 +109,7 @@ input {
     color: white;
     margin-top: 5px;
 }
-
+    
 .search-again-container {
     width: 90%;
     overflow-y: scroll;
@@ -118,22 +117,22 @@ input {
     flex-direction: column;
     align-items: center;
 }
-
+    
 .card {
     margin: 10px;
 }
-
+    
 .search-again-button {
     width: 90%;
 }
-
+    
 .search-button:hover,
 .search-again-button:hover {
     width: 125px;
     height: 25px;
     background-color: #c83200;
 }
-
+    
 label {
     font-size: 14px;
     font-style: italic;
@@ -141,55 +140,61 @@ label {
     text-shadow: 2px 1px gray;
     margin-top: -5px;
 }
-
+    
 .footer-section {
     position: fixed;
     bottom: 0;
-    width: 375px;
+    width: 100%;
     /* Height of the footer*/ 
     height: 12%;
     background: #37474f;
-    /* border: 3px solid yellow; */
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
 }
-
+    
 .nav {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-
+    
 .nav-link {
     color: white;
     text-decoration: none;
     font-size: 10px;
 }
-
+    
 .nav-link:hover {
     color: #FF8000;
 }
-
+    
 .hidden {
     visibility: hidden;
     display:none;
 }
-
+    
 .fave-me {
     width: 30px;
     height: 30px;
 }
-
+    
 .fave-me:hover {
     width: 35px;
     height: 35px;
     background-color: #e6b254;
 }
-
+    
 .fave-me:active {
     width: 30px;
     height: 30px;
     background-color: #e6b254;
 }
+
+/* For desktop: */
+@media only screen and (min-width: 768px) {
+    
+    .input-container {
+        width: 60%;
+        height: 80%;
+    }
+  }
+
