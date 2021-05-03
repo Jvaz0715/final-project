@@ -190,6 +190,10 @@ label {
     background-color: #e6b254;
 }
 
+.card-image {
+    height: 30%;
+}
+
 /* For desktop: */
 @media only screen and (min-width: 768px) {
 

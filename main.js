@@ -77,13 +77,22 @@ function createCard(data) {
     //this will get you the wikipedia page to the place
     console.log("wikipedia page: " + data.wikipedia);
     const resultsDisplay = $('.results-display');
+
+    let attractionDescription = data.wikipedia_extracts.text;
+
+    if(attractionDescription.length > 280){
+       attractionDescription = attractionDescription.substring(0,280) + "..."; 
+    } else {
+        attractionDescription;
+    }
+    
     const newAttraction = $(`
     <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="${data.preview.source}" alt="Card image cap">
+    <img class="card-img-top card-image" src="${data.preview.source}" alt="Card image cap">
         <div class="card-body">
             <h5 class="card-title">${data.name}</h5>
             <div class="favorite-icon"><img src="assets/favorite.png" class="fave-me"></div>
-            <p class="card-text">${data.wikipedia_extracts.text}</p>
+            <p class="card-text">${attractionDescription}</p>
             <a href="${data.wikipedia}" target="_blank" class="btn btn-primary">Learn More</a>
         </div>
     </div>`)
