@@ -1,8 +1,7 @@
-//delclare the input value
 //declare the button that will be used to execute
 const searchButton = $(".search-button");
 
-
+//Create click function for fetches
 searchButton.click(function() {
     const apiKey = $(".apikey-input").val();
     //test what details come with the data
@@ -40,6 +39,7 @@ searchButton.click(function() {
         })
         // $(".apikey-input").val("");
         // $(".apikey-input").attr("placeholder", "enter api key");
+        //will hide the search container on click
         $('.input-container').addClass('hidden');
         $('.search-again-container').removeClass('hidden');
 })
