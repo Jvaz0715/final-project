@@ -191,23 +191,51 @@ label {
 
 /* For desktop: */
 @media only screen and (min-width: 768px) {
+
+    .banner-image {
+        height: 25%;
+    }
     
     .input-container {
         width: 60%;
         height: 80%;
     }
 
+    .main-section {
+        height: 70%;
+    }
+
     .search-again-container {
         width: 90%;
-        overflow-x: scroll;
+        /* overflow-x: scroll; */
         display: flex;
         flex-direction: column;
         align-items: center;
     }
+
+    .results-display {
+        display: flex;
+        flex: row;
+    }
         
     .card {
         margin: 10px;
-        
     }
+
+    .footer-section {
+        /* Height of the footer*/ 
+        height: 5%;
+    }
+        
+    .nav {
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+    }
+        
+    .nav-link {
+        font-size: 14px;
+    }
+
   }
 
